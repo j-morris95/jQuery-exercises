@@ -72,7 +72,19 @@
   </div>
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script>
-    $(document).ready(console.log("Let's get ready to party with jQuery!"))
+    $('document').ready(console.log("Let's get ready to party with jQuery!"));
+    $('article img').addClass('image-center');
+    $('p').eq(-1).remove();
+    $('#title').css("font-size", `${100 * Math.random()}px`);
+    $('ol').append('<li>This is a new li</li>');
+    $('aside').empty().append('<p>Sorry about that list, it needed to go</p>');
+    $('.form-control').on('change', () => {
+      let red = $('.form-control').eq(0).val();
+      let blue = $('.form-control').eq(1).val();
+      let green = $('.form-control').eq(2).val();
+      $('body').css('background-color', `rgb(${red},${green},${blue})`);
+    })
+    $('img').on('click', (evt) => $(evt.target).remove())
   </script>
 </body>
 
